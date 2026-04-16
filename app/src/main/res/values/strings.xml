@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PrivateVPN</string>
+    <string name="subtitle">Ваш защищённый VPN-клиент</string>
+    <string name="vpn_status_disconnected">Статус: не подключено</string>
+    <string name="vpn_hint">Базовый интерфейс готов. На следующем этапе добавим реальное управление VPN-туннелем.</string>
+    <string name="connect_button">Подключиться</string>
+    <string name="footer_note">Демо-экран запуска. Сервис VPN будет подключён в следующей итерации.</string>
+</resources>
