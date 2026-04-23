@@ -7,6 +7,10 @@ build/
 .cxx/
 captures/
 local.properties
+app/release/
+*.dm
+output-metadata.json
+tmp_*.txt
 
 # IDE
 .idea/
