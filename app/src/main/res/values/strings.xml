@@ -31,7 +31,8 @@
     <string name="home_split_tunneling_label">Раздельное туннелирование</string>
     <string name="home_socks_label">SOCKS</string>
     <string name="home_servers_title">Серверы</string>
-    <string name="home_servers_empty">Нет доступных серверов. Импортируйте профиль или добавьте подписку.</string>
+    <string name="home_servers_empty">Нет доступных серверов.</string>
+    <string name="home_servers_empty_help">Перейдите в раздел «Профили»: нажмите «Импортировать профиль», если у вас файл конфига или строка vless/vmess/trojan; нажмите «Добавить подписку», если у вас ссылка https.</string>
     <string name="home_servers_regular_group">Обычные профили</string>
     <string name="home_subscriptions_title">Подписки</string>
     <string name="home_ping_all_servers">Пинговать все серверы</string>
@@ -257,6 +258,8 @@
     <string name="settings_socks_password">Пароль</string>
     <string name="settings_socks_port_invalid">Укажите корректный порт от 1 до 65535</string>
     <string name="settings_socks_auth_required">При включенном SOCKS укажите логин и пароль</string>
+    <string name="settings_socks_generate_credentials">Сгенерировать логин и пароль</string>
+    <string name="settings_socks_generated">Сгенерированы случайные логин и пароль для localhost SOCKS</string>
     <string name="settings_socks_save">Сохранить SOCKS настройки</string>
     <string name="settings_notifications_hint">Чтобы видеть статус VPN в шторке и управлять подключением, разрешите уведомления.</string>
     <string name="settings_notifications_request">Разрешить уведомления</string>
@@ -271,6 +274,11 @@
     <string name="notifications_onboarding_text">Уведомления нужны для постоянного статуса активного VPN и быстрого отключения из шторки.</string>
     <string name="notifications_onboarding_allow">Разрешить</string>
     <string name="notifications_onboarding_later">Позже</string>
+
+    <string name="localhost_onboarding_title">Перед первым подключением настройте localhost SOCKS</string>
+    <string name="localhost_onboarding_text">localhost SOCKS нужен для безопасной и стабильной работы VPN. Включите его в настройках и задайте логин/пароль. После сохранения приложение использует их автоматически, вводить при каждом подключении ничего не нужно.</string>
+    <string name="localhost_onboarding_open_settings">Открыть настройки SOCKS</string>
+    <string name="localhost_onboarding_later">Позже</string>
 
     <string name="vpn_notification_channel_name">NoraVPN</string>
     <string name="vpn_notification_channel_description">Фоновая работа VPN-сервиса</string>

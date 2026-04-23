@@ -11,6 +11,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -32,6 +33,7 @@ import com.privatevpn.app.ui.components.InlineStatusLabel
 import com.privatevpn.app.ui.components.SectionTone
 import com.privatevpn.app.ui.theme.AppSpacing
 import com.privatevpn.app.ui.theme.AppWarning
+import java.security.SecureRandom
 
 @Composable
 fun SettingsScreen(
@@ -39,6 +41,7 @@ fun SettingsScreen(
     splitTunnelingEnabled: Boolean,
     systemVpnIntegration: SystemVpnIntegrationState,
     scrollToTopSignal: Int,
+    focusSocksSignal: Int,
     onAutoConnectChanged: (Boolean) -> Unit,
     onVerboseLogsChanged: (Boolean) -> Unit,
     onSaveSocksSettings: (SocksSettings) -> Unit,
@@ -47,7 +50,8 @@ fun SettingsScreen(
     onAddTileClick: () -> Unit,
     onOpenLogs: () -> Unit,
     onOpenDns: () -> Unit,
-    onOpenSystemVpnSettings: () -> Unit
+    onOpenSystemVpnSettings: () -> Unit,
+    onTransientMessage: (String) -> Unit
 ) {
     val listState = rememberLazyListState()
     val context = LocalContext.current
@@ -66,6 +70,11 @@ fun SettingsScreen(
     LaunchedEffect(scrollToTopSignal) {
         if (scrollToTopSignal > 0) {
             listState.animateScrollToItem(0)
+        }
+    }
+    LaunchedEffect(focusSocksSignal) {
+        if (focusSocksSignal > 0) {
+            listState.animateScrollToItem(1)
         }
     }
 
@@ -154,6 +163,20 @@ fun SettingsScreen(
                     singleLine = true
                 )
 
+                TextButton(
+                    onClick = {
+                        val generated = generateLocalhostSocksCredentials()
+                        socksEnabled = true
+                        socksLogin = generated.first
+                        socksPassword = generated.second
+                        socksError = null
+                        onTransientMessage(context.getString(R.string.settings_socks_generated))
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(text = stringResource(R.string.settings_socks_generate_credentials))
+                }
+
                 if (!socksError.isNullOrBlank()) {
                     Text(
                         text = socksError ?: "",
@@ -167,10 +190,12 @@ fun SettingsScreen(
                         val port = socksPortText.toIntOrNull()
                         if (port == null || port !in 1..65535) {
                             socksError = context.getString(R.string.settings_socks_port_invalid)
+                            onTransientMessage(socksError ?: "")
                             return@Button
                         }
                         if (socksEnabled && (socksLogin.isBlank() || socksPassword.isBlank())) {
                             socksError = context.getString(R.string.settings_socks_auth_required)
+                            onTransientMessage(socksError ?: "")
                             return@Button
                         }
 
@@ -311,3 +336,24 @@ private fun systemStateText(state: SystemVpnIntegrationState): String {
         )
     }
 }
+
+private val socksCredentialRandom = SecureRandom()
+
+private fun generateLocalhostSocksCredentials(): Pair<String, String> {
+    val loginSuffix = randomStringFromAlphabet(length = 8, alphabet = LOGIN_ALPHABET)
+    val password = randomStringFromAlphabet(length = 16, alphabet = PASSWORD_ALPHABET)
+    return "user_$loginSuffix" to password
+}
+
+private fun randomStringFromAlphabet(length: Int, alphabet: String): String {
+    if (length <= 0 || alphabet.isBlank()) return ""
+    return buildString(length) {
+        repeat(length) {
+            val index = socksCredentialRandom.nextInt(alphabet.length)
+            append(alphabet[index])
+        }
+    }
+}
+
+private const val LOGIN_ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789"
+private const val PASSWORD_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789"

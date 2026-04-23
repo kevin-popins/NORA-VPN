@@ -79,7 +79,9 @@ fun PrivateVpnApp(
     var profilesReselectSignal by remember { mutableIntStateOf(0) }
     var privateSessionReselectSignal by remember { mutableIntStateOf(0) }
     var settingsReselectSignal by remember { mutableIntStateOf(0) }
+    var settingsSocksFocusSignal by remember { mutableIntStateOf(0) }
     var showNotificationOnboarding by remember { mutableStateOf(false) }
+    var showLocalhostSocksOnboarding by remember { mutableStateOf(false) }
 
     val currentRoute = navBackStackEntry?.destination?.route
     val currentDestination = AppDestination.fromRouteOrNull(currentRoute) ?: AppDestination.Home
@@ -145,6 +147,15 @@ fun PrivateVpnApp(
     LaunchedEffect(uiState.notificationPermission.shouldShowOnboardingPrompt) {
         if (uiState.notificationPermission.shouldShowOnboardingPrompt) {
             showNotificationOnboarding = true
+        }
+    }
+
+    LaunchedEffect(
+        uiState.settingsState.localhostSocksOnboardingShown,
+        uiState.profiles.size
+    ) {
+        if (!uiState.settingsState.localhostSocksOnboardingShown && uiState.profiles.isEmpty()) {
+            showLocalhostSocksOnboarding = true
         }
     }
 
@@ -322,6 +333,7 @@ fun PrivateVpnApp(
                     splitTunnelingEnabled = uiState.privateSessionUiState.enabled,
                     systemVpnIntegration = uiState.privateSessionUiState.systemIntegration,
                     scrollToTopSignal = settingsReselectSignal,
+                    focusSocksSignal = settingsSocksFocusSignal,
                     onAutoConnectChanged = appViewModel::setAutoConnect,
                     onVerboseLogsChanged = appViewModel::setVerboseLogs,
                     onSaveSocksSettings = appViewModel::saveSocksSettings,
@@ -366,13 +378,47 @@ fun PrivateVpnApp(
                     onOpenSystemVpnSettings = {
                         val intent = appViewModel.buildOpenSystemVpnSettingsIntent()
                         runCatching { context.startActivity(intent) }
-                    }
+                    },
+                    onTransientMessage = appViewModel::emitTransientMessage
                 )
             }
         }
     }
 
-    if (showNotificationOnboarding) {
+    if (showLocalhostSocksOnboarding) {
+        AlertDialog(
+            onDismissRequest = {
+                appViewModel.markLocalhostSocksOnboardingShown()
+                showLocalhostSocksOnboarding = false
+            },
+            title = { Text(text = stringResource(R.string.localhost_onboarding_title)) },
+            text = { Text(text = stringResource(R.string.localhost_onboarding_text)) },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        appViewModel.markLocalhostSocksOnboardingShown()
+                        showLocalhostSocksOnboarding = false
+                        settingsSocksFocusSignal += 1
+                        navigateToTopLevel(AppDestination.Settings)
+                    }
+                ) {
+                    Text(text = stringResource(R.string.localhost_onboarding_open_settings))
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = {
+                        appViewModel.markLocalhostSocksOnboardingShown()
+                        showLocalhostSocksOnboarding = false
+                    }
+                ) {
+                    Text(text = stringResource(R.string.localhost_onboarding_later))
+                }
+            }
+        )
+    }
+
+    if (!showLocalhostSocksOnboarding && showNotificationOnboarding) {
         AlertDialog(
             onDismissRequest = {
                 appViewModel.markNotificationPermissionPromptShown()

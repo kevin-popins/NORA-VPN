@@ -437,6 +437,12 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun markLocalhostSocksOnboardingShown() {
+        viewModelScope.launch {
+            userSettingsRepository.setLocalhostSocksOnboardingShown(true)
+        }
+    }
+
     fun buildOpenAppNotificationSettingsIntent(): Intent {
         val appContext = getApplication<Application>().applicationContext
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -495,9 +501,14 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     private suspend fun connectVpnInternal() {
         val snapshot = uiState.value
-        val profile = snapshot.activeProfile
-            ?: snapshot.profiles.firstOrNull()
-            ?: createSkeletonProfile()
+        if (snapshot.profiles.isEmpty()) {
+            emitTransientMessage(
+                "Нет доступных профилей. Перейдите в раздел «Профили», импортируйте профиль или добавьте подписку."
+            )
+            addLog(LogLevel.INFO, "Подключение отменено: нет доступных профилей")
+            return
+        }
+        val profile = snapshot.activeProfile ?: snapshot.profiles.first()
 
         if (snapshot.vpnStatus == VpnConnectionStatus.NO_PERMISSION) {
             applyUiError(
@@ -1065,8 +1076,18 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         viewModelScope.launch {
-            userSettingsRepository.setSocksSettings(settings)
-            addLog(LogLevel.INFO, "Параметры localhost SOCKS сохранены")
+            runCatching {
+                userSettingsRepository.setSocksSettings(settings)
+            }.onSuccess {
+                addLog(LogLevel.INFO, "Параметры localhost SOCKS сохранены")
+                emitTransientMessage("Настройки localhost SOCKS успешно сохранены")
+            }.onFailure { error ->
+                addLog(
+                    LogLevel.ERROR,
+                    "Не удалось сохранить localhost SOCKS: ${error.message ?: "unknown error"}"
+                )
+                emitTransientMessage("Не удалось сохранить настройки localhost SOCKS")
+            }
         }
     }
 
@@ -1632,27 +1653,6 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     private data class ProfileEndpoint(
         val host: String,
         val port: Int
-    )
-
-    private fun createSkeletonProfile(): VpnProfile = VpnProfile(
-        id = "skeleton",
-        displayName = "Временный каркас",
-        type = ProfileType.XRAY_JSON,
-        sourceRaw = "{}",
-        normalizedJson = """
-            {
-              "log": { "loglevel": "warning" },
-              "inbounds": [],
-              "outbounds": [
-                { "tag": "direct", "protocol": "freedom", "settings": {} }
-              ]
-            }
-        """.trimIndent(),
-        dnsServers = DefaultDnsProvider.defaultServers,
-        dnsFallbackApplied = true,
-        isPartialImport = true,
-        importWarnings = listOf("Подключение запущено без выбранного профиля"),
-        importedAtMs = System.currentTimeMillis()
     )
 
     private fun resolveProfileServer(profile: VpnProfile?): String? {

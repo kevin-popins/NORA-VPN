@@ -41,6 +41,12 @@ class DataStoreUserSettingsRepository(
         }
     }
 
+    override suspend fun setLocalhostSocksOnboardingShown(shown: Boolean) {
+        context.userSettingsDataStore.edit { prefs ->
+            prefs[Keys.LOCALHOST_SOCKS_ONBOARDING_SHOWN] = shown
+        }
+    }
+
     override suspend fun setActiveProfile(profileId: String?) {
         context.userSettingsDataStore.edit { prefs ->
             if (profileId.isNullOrBlank()) {
@@ -102,6 +108,7 @@ class DataStoreUserSettingsRepository(
             autoConnectOnLaunch = prefs[Keys.AUTO_CONNECT] ?: false,
             verboseLogs = prefs[Keys.VERBOSE_LOGS] ?: true,
             notificationPermissionPromptShown = prefs[Keys.NOTIFICATION_PERMISSION_PROMPT_SHOWN] ?: false,
+            localhostSocksOnboardingShown = prefs[Keys.LOCALHOST_SOCKS_ONBOARDING_SHOWN] ?: false,
             activeProfileId = prefs[Keys.ACTIVE_PROFILE_ID],
             privateSessionEnabled = prefs[Keys.PRIVATE_SESSION_ENABLED] ?: false,
             privateSessionStartedAtMs = prefs[Keys.PRIVATE_SESSION_STARTED_AT],
@@ -128,6 +135,7 @@ class DataStoreUserSettingsRepository(
         val AUTO_CONNECT = booleanPreferencesKey("auto_connect")
         val VERBOSE_LOGS = booleanPreferencesKey("verbose_logs")
         val NOTIFICATION_PERMISSION_PROMPT_SHOWN = booleanPreferencesKey("notification_permission_prompt_shown")
+        val LOCALHOST_SOCKS_ONBOARDING_SHOWN = booleanPreferencesKey("localhost_socks_onboarding_shown")
         val ACTIVE_PROFILE_ID = stringPreferencesKey("active_profile_id")
         val PRIVATE_SESSION_ENABLED = booleanPreferencesKey("private_session_enabled")
         val PRIVATE_SESSION_STARTED_AT = longPreferencesKey("private_session_started_at")

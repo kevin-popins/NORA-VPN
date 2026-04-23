@@ -243,10 +243,19 @@ fun HomeScreen(
 
         if (directProfiles.isEmpty() && subscriptions.isEmpty()) {
             item(key = "servers_empty") {
-                Text(
-                    text = stringResource(R.string.home_servers_empty),
-                    style = MaterialTheme.typography.bodyMedium
-                )
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(AppSpacing.xxs)
+                ) {
+                    Text(
+                        text = stringResource(R.string.home_servers_empty),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Text(
+                        text = stringResource(R.string.home_servers_empty_help),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
         } else {
             if (directProfiles.isNotEmpty()) {

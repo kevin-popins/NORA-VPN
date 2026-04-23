@@ -11,6 +11,7 @@ interface UserSettingsRepository {
     suspend fun setAutoConnectOnLaunch(enabled: Boolean)
     suspend fun setVerboseLogs(enabled: Boolean)
     suspend fun setNotificationPermissionPromptShown(shown: Boolean)
+    suspend fun setLocalhostSocksOnboardingShown(shown: Boolean)
     suspend fun setActiveProfile(profileId: String?)
     suspend fun setPrivateSession(enabled: Boolean, startedAtMs: Long?)
     suspend fun setPrivateSessionTrustedPackages(packageNames: Set<String>)

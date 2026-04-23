@@ -4,6 +4,7 @@ data class SettingsState(
     val autoConnectOnLaunch: Boolean = false,
     val verboseLogs: Boolean = true,
     val notificationPermissionPromptShown: Boolean = false,
+    val localhostSocksOnboardingShown: Boolean = false,
     val activeProfileId: String? = null,
     val privateSessionEnabled: Boolean = false,
     val privateSessionStartedAtMs: Long? = null,
