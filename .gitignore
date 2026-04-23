@@ -1,20 +1,67 @@
-*.iml
+# Android / Gradle
 .gradle/
-/.gradle-home/
-/.tmpwrapper/
-/.tmpwrapper-groovy/
-/.tmp-nested-wrapper.jar
-/.idea/
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+.kotlin/
+build/
+*/build/
+.externalNativeBuild/
+.cxx/
+captures/
+local.properties
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Build artifacts
+*.apk
+*.ap_
+*.aab
+*.aar
+*.dex
+*.class
+*.hprof
+*.mapping
+*.prof
+
+# Native/debug outputs
+*.so.tmp
+*.o
+*.obj
+
+# Logs and diagnostics
+*.log
+*.logcat
+hs_err_pid*
+replay_pid*
+log.txt
+samsung-*.logcat
+
+# OS / misc
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-app/build
+Thumbs.db
+desktop.ini
+
+# Environment and secrets
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+
+# Local temp/cache folders
+.downloads/
+.tmp*/
+tmp/
+temp/
+*.tmp
+.tmp-nested-wrapper.jar
+tun2proxy-android-libs.zip
+
+# Local gradle helper folders
+.gradle-local*/
+.gradle-work*/
+.gradle-home*/

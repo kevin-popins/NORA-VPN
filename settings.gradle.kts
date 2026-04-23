@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PrivateVPN"
+rootProject.name = "NoraVPN"
 include(":app")

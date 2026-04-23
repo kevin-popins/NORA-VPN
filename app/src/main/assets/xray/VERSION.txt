@@ -1,0 +1,5 @@
+Xray source release: v26.3.27
+Runtime launch: nativeLibraryDir/libxray.so
+arm64-v8a: bundled
+x86_64: bundled
+armeabi-v7a: provide custom libxray.so in jniLibs/armeabi-v7a
