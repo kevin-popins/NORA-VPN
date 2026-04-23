@@ -51,6 +51,14 @@ desktop.ini
 *.p12
 *.pem
 *.key
+*.secret
+*.token
+*.local.conf
+*.private.conf
+*.secrets.conf
+local-secrets/
+secrets/
+private-configs/
 
 # Local temp/cache folders
 .downloads/
