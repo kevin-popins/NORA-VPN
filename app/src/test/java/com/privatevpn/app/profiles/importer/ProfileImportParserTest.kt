@@ -15,7 +15,7 @@ class ProfileImportParserTest {
             [Interface]
             Address = 10.10.10.2/32
             DNS = 1.1.1.1, 1.0.0.1
-            PrivateKey = AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+            PrivateKey = RkRZCSxTtCLGNon7xBRYbUMike+4dAe00VXWOLc9jf0=
             Jc = 4
             Jmin = 10
             Jmax = 50
@@ -34,8 +34,8 @@ class ProfileImportParserTest {
             I5 =
 
             [Peer]
-            PublicKey = BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=
-            PresharedKey = CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC=
+            PublicKey = 8OYCZNdco4f0Qk1kTVDncpPxa29iGPOeSSmHFBiW66A=
+            PresharedKey = 9MIGLiDvFCqBIj4dMA2hx9lUPUJYmL6IZSf7m3+2oYI=
             AllowedIPs = 0.0.0.0/0, ::/0
             Endpoint = 198.51.100.42:51820
             PersistentKeepalive = 25
