@@ -1,5 +1,7 @@
 package com.privatevpn.app.vpn
 
+import com.privatevpn.app.ui.location.noraProfileDisplayName
+
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -592,7 +594,7 @@ class PrivateVpnService : VpnService() {
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification_nora)
             .setContentTitle(getString(R.string.vpn_notification_title, statusLabel))
-            .setContentText(getString(R.string.vpn_notification_text, profileLabel))
+            .setContentText(getString(R.string.vpn_notification_text, noraProfileDisplayName(profileLabel)))
             .setContentIntent(pendingIntent)
             .setOngoing(true)
             .addAction(

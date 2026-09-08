@@ -1,5 +1,7 @@
 package com.privatevpn.app.ui.screens
 
+import com.privatevpn.app.ui.location.noraProfileDisplayName
+
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.AnimatedVisibility
@@ -265,7 +267,7 @@ fun HomeScreen(
                     key = { profile -> profile.id }
                 ) { profile ->
                     CompactServerRow(
-                        title = profile.displayName,
+                        title = noraProfileDisplayName(profile.displayName),
                         selected = profile.id == activeProfileId,
                         pingText = serverPingResults[profile.id],
                         onClick = { onSetActiveProfile(profile.id) }
@@ -557,7 +559,7 @@ private fun SubscriptionGroup(
                     } else {
                         profiles.forEach { profile ->
                             CompactServerRow(
-                                title = profile.displayName,
+                                title = noraProfileDisplayName(profile.displayName),
                                 selected = profile.id == activeProfileId,
                                 pingText = serverPingResults[profile.id],
                                 onClick = { onSelectProfile(profile.id) }

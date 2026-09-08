@@ -1,5 +1,9 @@
 package com.privatevpn.app.ui.components
 
+import android.database.ContentObserver
+import android.os.Handler
+import android.os.Looper
+import android.provider.Settings
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -40,6 +44,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
@@ -70,6 +75,7 @@ import androidx.compose.ui.unit.dp
 import com.privatevpn.app.R
 import com.privatevpn.app.ui.openNoraTelegramBot
 import com.privatevpn.app.ui.location.resolveNoraRegion
+import com.privatevpn.app.ui.location.noraProfileDisplayName
 import com.privatevpn.app.ui.theme.NoraAmber
 import com.privatevpn.app.ui.theme.NoraDanger
 import com.privatevpn.app.ui.theme.NoraGreen
@@ -332,10 +338,11 @@ fun NoraActiveServerCard(
 ) {
     val context = LocalContext.current
     val imageIds = remember(profileName) { noraLocationPhotoIds(context, profileName) }
-    var photoIndex by remember(profileName) { mutableIntStateOf(0) }
+    val reduceMotion = rememberNoraReducedMotion()
+    var photoIndex by remember(profileName, imageIds, reduceMotion) { mutableIntStateOf(0) }
     var showEndpoint by rememberSaveable(profileName) { mutableStateOf(false) }
-    LaunchedEffect(imageIds) {
-        if (imageIds.size > 1) {
+    LaunchedEffect(profileName, imageIds, reduceMotion) {
+        if (!reduceMotion && imageIds.size > 1) {
             while (true) {
                 delay(6_000)
                 photoIndex = (photoIndex + 1) % imageIds.size
@@ -354,18 +361,16 @@ fun NoraActiveServerCard(
         border = BorderStroke(1.dp, NoraLine)
     ) {
         Box(modifier = Modifier.height(190.dp).clickable(onClick = onClick)) {
-            Crossfade(
-                targetState = imageIds[photoIndex],
-                animationSpec = tween(1_550, easing = FastOutSlowInEasing),
-                label = "nora_server_photo"
-            ) { imageId ->
-                Image(
-                    painter = painterResource(imageId),
-                    contentDescription = null,
-                    modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.Crop,
-                    alpha = 0.62f
-                )
+            if (reduceMotion) {
+                NoraLocationPhoto(imageIds.first())
+            } else {
+                Crossfade(
+                    targetState = imageIds[photoIndex],
+                    animationSpec = tween(1_550, easing = FastOutSlowInEasing),
+                    label = "nora_server_photo"
+                ) { imageId ->
+                    NoraLocationPhoto(imageId)
+                }
             }
             Box(
                 modifier = Modifier
@@ -393,7 +398,7 @@ fun NoraActiveServerCard(
                 }
                 Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
                     Text(
-                        text = profileName,
+                        text = noraProfileDisplayName(profileName),
                         color = NoraText,
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.SemiBold,
@@ -643,6 +648,41 @@ fun NoraWelcomeScene(
             }
         }
     }
+}
+
+@Composable
+private fun NoraLocationPhoto(imageId: Int) {
+    Image(
+        painter = painterResource(imageId),
+        contentDescription = null,
+        modifier = Modifier.fillMaxSize(),
+        contentScale = ContentScale.Crop,
+        alpha = 0.62f
+    )
+}
+
+@Composable
+private fun rememberNoraReducedMotion(): Boolean {
+    val resolver = LocalContext.current.contentResolver
+    fun animationsDisabled() =
+        Settings.Global.getFloat(resolver, Settings.Global.ANIMATOR_DURATION_SCALE, 1f) <= 0f
+
+    var reducedMotion by remember(resolver) { mutableStateOf(animationsDisabled()) }
+    DisposableEffect(resolver) {
+        val observer = object : ContentObserver(Handler(Looper.getMainLooper())) {
+            override fun onChange(selfChange: Boolean) {
+                reducedMotion = animationsDisabled()
+            }
+        }
+        resolver.registerContentObserver(
+            Settings.Global.getUriFor(Settings.Global.ANIMATOR_DURATION_SCALE),
+            false,
+            observer
+        )
+        reducedMotion = animationsDisabled()
+        onDispose { resolver.unregisterContentObserver(observer) }
+    }
+    return reducedMotion
 }
 
 private fun noraLocationPhotoIds(context: android.content.Context, profileName: String): List<Int> {

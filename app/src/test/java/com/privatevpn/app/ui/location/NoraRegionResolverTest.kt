@@ -7,6 +7,64 @@ import org.junit.Test
 class NoraRegionResolverTest {
 
     @Test
+    fun `explicit Antarctica overrides only the compatibility Somalia region`() {
+        listOf(
+            "🇸🇴 Антарктида",
+            "  NORA  🇸🇴   Антарктида 01  ",
+            "NORA\n🇸🇴\tANTARCTICA #2",
+            "NORA\u00a0Антарктида\u00a0№ 3 🇸🇴",
+            "NORA-🇸🇴-Antarctica04",
+            "SO Антарктида 5",
+            "Somalia Antarctica",
+            "Сомали Антарктида"
+        ).forEach { assertRegion("AQ", it) }
+    }
+
+    @Test
+    fun `Antarctica has canonical label flag and all five backgrounds`() {
+        val region = resolveNoraRegion("🇸🇴 Антарктида")
+        assertEquals("Антарктида", region?.labelRu)
+        assertEquals("🇦🇶", region?.flag)
+        assertEquals((1..5).map { "antarctica$it" }, region?.backgroundNames)
+        assertRegion("AQ", "NORA AQ 1")
+        assertRegion("AQ", "🇦🇶")
+    }
+
+    @Test
+    fun `real Somalia remains Somalia`() {
+        listOf("🇸🇴 Somalia", "NORA Сомали 01", "SO", "Somalia", "🇸🇴")
+            .forEach { assertRegion("SO", it) }
+        assertEquals("Сомали", resolveNoraRegion("Somalia")?.labelRu)
+        assertEquals("🇸🇴", resolveNoraRegion("Somalia")?.flag)
+        assertRegion("DE", "so fast Germany")
+    }
+
+    @Test
+    fun `Antarctica priority does not hide other country conflicts or match substrings`() {
+        assertNull(resolveNoraRegion("🇸🇴 Antarctica Germany"))
+        assertNull(resolveNoraRegion("Антарктида 🇳🇱"))
+        assertNull(resolveNoraRegion("🇸🇴 AQ"))
+        assertNull(resolveNoraRegion("🇸🇴 🇦🇶"))
+        assertRegion("SO", "🇸🇴 NotAntarctica")
+        assertRegion("SO", "🇸🇴 AntarcticaLink")
+        assertRegion("SO", "🇸🇴 АнтарктидаТест")
+    }
+
+    @Test
+    fun `display name corrects compatibility flag without dropping NORA prefix or number`() {
+        val raw = "NORA 🇸🇴 Antarctica #03"
+        val display = noraProfileDisplayName(raw)
+        assertEquals("NORA 🇦🇶 Антарктида #03", display)
+        assertEquals("NORA 🇦🇶 Антарктида04", noraProfileDisplayName("NORA 🇸🇴 Antarctica04"))
+        assertEquals("NORA 🇦🇶 Антарктида #03", noraProfileDisplayName(display))
+        assertEquals("NORA 🇸🇴 Antarctica #03", raw)
+        assertEquals("NORA 🇸🇴 Somalia 01", noraProfileDisplayName("NORA 🇸🇴 Somalia 01"))
+        assertEquals("🇸🇴 Antarctica Germany", noraProfileDisplayName("🇸🇴 Antarctica Germany"))
+        assertEquals("NORA 🇦🇶 Антарктида 01", noraProfileDisplayName("NORA 🇸🇴 Somalia Antarctica 01"))
+        assertEquals("Антарктида 5", noraProfileDisplayName("SO Антарктида 5"))
+    }
+
+    @Test
     fun `recognizes Estonia in Russian English ISO and city forms`() {
         assertRegion("EE", "NORA ЭСТОНИЯ 01")
         assertRegion("EE", "fast-estonia-vless")

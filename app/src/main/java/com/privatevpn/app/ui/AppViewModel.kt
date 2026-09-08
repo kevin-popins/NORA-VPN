@@ -1,5 +1,7 @@
 package com.privatevpn.app.ui
 
+import com.privatevpn.app.ui.location.noraProfileDisplayName
+
 import android.app.Application
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -2064,16 +2066,17 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             VpnRuntimeStateStore.setLastSelectedProfileName(imported.displayName)
         }
 
-        addLog(LogLevel.INFO, "Профиль '${imported.displayName}' импортирован ($sourceLabel)")
+        val displayName = noraProfileDisplayName(imported.displayName)
+        addLog(LogLevel.INFO, "Профиль '$displayName' импортирован ($sourceLabel)")
         if (imported.dnsFallbackApplied) {
-            addLog(LogLevel.INFO, "Для профиля '${imported.displayName}' подставлен DNS по умолчанию")
+            addLog(LogLevel.INFO, "Для профиля '$displayName' подставлен DNS по умолчанию")
         }
         val message = if (imported.isPartialImport) {
-            addLog(LogLevel.INFO, "Профиль '${imported.displayName}' импортирован частично")
+            addLog(LogLevel.INFO, "Профиль '$displayName' импортирован частично")
             imported.importWarnings.forEach { warning -> addLog(LogLevel.INFO, warning) }
-            "Профиль '${imported.displayName}' добавлен частично"
+            "Профиль '$displayName' добавлен частично"
         } else {
-            "Профиль '${imported.displayName}' успешно добавлен"
+            "Профиль '$displayName' успешно добавлен"
         }
         if (reportToAddScreen) {
             _addContentEvents.send(

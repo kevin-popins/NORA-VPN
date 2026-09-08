@@ -85,6 +85,7 @@ import com.privatevpn.app.ui.components.InlineStatusLabel
 import com.privatevpn.app.ui.components.SectionTone
 import com.privatevpn.app.ui.components.softClickable
 import com.privatevpn.app.ui.location.resolveNoraRegion
+import com.privatevpn.app.ui.location.noraProfileDisplayName
 import com.privatevpn.app.ui.theme.AppSpacing
 import com.privatevpn.app.ui.theme.NoraAmber
 import com.privatevpn.app.ui.theme.NoraDanger
@@ -857,7 +858,7 @@ private fun SubscriptionChildProfileRow(
                 onClick = { onSelectProfile(profile.id) }
             )
             Text(
-                text = profile.displayName,
+                text = noraProfileDisplayName(profile.displayName),
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = if (profile.id == activeProfileId) FontWeight.SemiBold else FontWeight.Normal,
                 modifier = Modifier.weight(1f),
@@ -995,7 +996,7 @@ private fun ProfileCard(
                     }
                     Spacer(Modifier.size(10.dp))
                     Column {
-                        Text(text = profile.displayName, style = MaterialTheme.typography.titleMedium, color = NoraText, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                        Text(text = noraProfileDisplayName(profile.displayName), style = MaterialTheme.typography.titleMedium, color = NoraText, maxLines = 1, overflow = TextOverflow.Ellipsis)
                         Text(
                             text = profileTypeLabel(profile.type),
                             style = MaterialTheme.typography.labelSmall,
@@ -1337,6 +1338,9 @@ private fun ProfileDetailsDialog(
                     .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
+                resolveNoraRegion(profile.displayName)?.let { region ->
+                    Text(text = "${region.flag} ${region.labelRu}")
+                }
                 Text(text = stringResource(R.string.profiles_type_label, profileTypeLabel(profile.type)))
                 Text(text = stringResource(R.string.profiles_details_dns, profile.dnsServers.joinToString()))
                 Text(
@@ -1380,7 +1384,7 @@ private fun ProfileConfigDialog(
                 Text(text = stringResource(R.string.profiles_error_close))
             }
         },
-        title = { Text(text = stringResource(R.string.profiles_config_viewer_title, profile.displayName)) },
+        title = { Text(text = stringResource(R.string.profiles_config_viewer_title, noraProfileDisplayName(profile.displayName))) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Row(

@@ -27,7 +27,8 @@ private val combiningMarks = Regex("\\p{M}+")
 
 // These ISO codes are also common words. Lowercase forms only count when the
 // name is short; uppercase forms such as "NORA AT 1" remain supported.
-private val ambiguousWordIsoCodes = setOf("at", "be", "in", "it", "no")
+private val ambiguousWordIsoCodes = setOf("at", "be", "in", "it", "no", "so")
+private val antarcticaNames = setOf("antarctica", "антарктида")
 
 private fun region(
     isoCode: String,
@@ -45,6 +46,8 @@ private fun region(
 )
 
 private val regionDefinitions = listOf(
+    region("AQ", "Антарктида", "🇦🇶", setOf("aq", "ata"), antarcticaNames, backgroundNames = listOf("antarctica1", "antarctica2", "antarctica3", "antarctica4", "antarctica5")),
+    region("SO", "Сомали", "🇸🇴", setOf("so", "som"), setOf("somalia", "сомали")),
     region("NL", "Нидерланды", "🇳🇱", setOf("nl", "nld", "нл"), setOf("netherlands", "nederland", "dutch", "holland", "голландия", "amsterdam", "амстердам", "rotterdam", "роттердам"), setOf("нидерланд"), listOf("netherlands1", "netherlands2", "netherlands3")),
     region("DE", "Германия", "🇩🇪", setOf("de", "deu", "ger"), setOf("germany", "deutschland", "германия", "berlin", "берлин", "frankfurt", "франкфурт", "munich", "münchen", "мюнхен", "dusseldorf", "düsseldorf", "дюссельдорф"), setOf("герман"), listOf("germany1", "germany2", "germany3")),
     region("RU", "Россия", "🇷🇺", setOf("ru", "rus", "рф"), setOf("russia", "россия", "moscow", "москва", "spb", "питер", "петербург", "saint petersburg", "санкт петербург"), setOf("росси"), listOf("russia1", "russia2", "russia3")),
@@ -97,15 +100,45 @@ private val regionDefinitions = listOf(
 
 internal fun resolveNoraRegion(profileName: String): NoraRegion? {
     val tokens = tokenize(profileName)
-    if (tokens.isEmpty()) return null
-
     val normalizedTokenValues = tokens.map(NameToken::normalized)
+    val explicitlyAntarctica = normalizedTokenValues.any(::isAntarcticaName)
+
+    // The public Antarctica subscription deliberately carries the Somalia flag
+    // for Happ compatibility. Only an explicit Antarctica name overrides SO;
+    // all other country conflicts keep the normal ambiguous-region behavior.
     return regionDefinitions
-        .filter { definition -> definition.matches(profileName, tokens, normalizedTokenValues) }
+        .filter { definition ->
+            (definition.region.isoCode == "AQ" && explicitlyAntarctica) ||
+                definition.matches(profileName, tokens, normalizedTokenValues)
+        }
+        .filterNot { explicitlyAntarctica && it.region.isoCode == "SO" }
         .map(RegionDefinition::region)
         .distinctBy(NoraRegion::isoCode)
         .singleOrNull()
 }
+
+/** Presentation only: never write this value back to a profile or transport. */
+internal fun noraProfileDisplayName(profileName: String): String {
+    val region = resolveNoraRegion(profileName)
+    if (region?.isoCode != "AQ") return profileName
+
+    var removedCompatibilityName = false
+    val displayName = tokenPattern.replace(profileName.replace("🇸🇴", region.flag)) { match ->
+        val normalized = normalizeToken(match.value)
+        when {
+            isAntarcticaName(normalized) -> region.labelRu + match.value.takeLastWhile(Char::isDigit)
+            normalized in setOf("somalia", "сомали") || match.value in setOf("SO", "SOM") -> {
+                removedCompatibilityName = true
+                ""
+            }
+            else -> match.value
+        }
+    }
+    return if (removedCompatibilityName) displayName.replace(Regex("[\\p{Z}\\s]+"), " ").trim() else displayName
+}
+
+private fun isAntarcticaName(token: String): Boolean =
+    token.trimEnd(Char::isDigit) in antarcticaNames
 
 private fun RegionDefinition.matches(
     profileName: String,

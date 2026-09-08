@@ -1,5 +1,7 @@
 package com.privatevpn.app.ui.screens
 
+import com.privatevpn.app.ui.location.noraProfileDisplayName
+
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
@@ -556,7 +558,7 @@ private fun SessionHistoryRow(record: VpnSessionRecord) {
         }
         Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
             Text(
-                text = record.profileName,
+                text = noraProfileDisplayName(record.profileName),
                 style = MaterialTheme.typography.bodyMedium,
                 color = NoraText,
                 fontWeight = FontWeight.SemiBold,

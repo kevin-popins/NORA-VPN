@@ -1,5 +1,7 @@
 package com.privatevpn.app.vpn
 
+import com.privatevpn.app.ui.location.noraProfileDisplayName
+
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -79,6 +81,7 @@ class VpnQuickSettingsTileService : TileService() {
         val tile = qsTile ?: return
         val status = VpnRuntimeStateStore.status.value
         val profile = VpnRuntimeStateStore.lastSelectedProfileName.value
+            ?.let(::noraProfileDisplayName)
             ?: getString(R.string.vpn_notification_profile_unknown)
 
         tile.label = getString(R.string.quick_tile_label)
