@@ -20,6 +20,7 @@ tmp_*.txt
 *.iws
 
 # Build artifacts
+artifacts/
 *.apk
 *.ap_
 *.aab

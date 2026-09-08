@@ -1,0 +1,950 @@
+{
+  "schema_version": 1,
+  "encoder": {
+    "pillow": "11.3.0",
+    "libwebp": "1.5.0"
+  },
+  "policy": "native dimensions; opaque WebP q95; RGBA lossless exact",
+  "asset_count": 52,
+  "source_bytes": 118274151,
+  "shipping_bytes": 22919980,
+  "reduction_percent": 80.6213,
+  "assets": [
+    {
+      "resource": "nora_location_antarctica1",
+      "source": "assets/backgrounds/masters/nora_location_antarctica1.png",
+      "source_sha256": "40b714afd37c1be7e1eaa85aa975be28863f1e8abb78ddd91c662b0a7b1d3eb0",
+      "source_bytes": 2429602,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_antarctica1.webp",
+      "output_sha256": "18e8e09a910765a34f5b29d5560f7ff0f39c5f7f8f962a466a77ce8340328ac4",
+      "output_bytes": 451586,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_antarctica2",
+      "source": "assets/backgrounds/masters/nora_location_antarctica2.png",
+      "source_sha256": "c7434b8c83e47dee114df4051f4b071dc4436cc4d5a81f89fe3da981881431cc",
+      "source_bytes": 2411720,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_antarctica2.webp",
+      "output_sha256": "5d4cc3e55d842557b9040109b3fed0a5a68596060dc48c0c00bd9b666084e7b3",
+      "output_bytes": 451022,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_antarctica3",
+      "source": "assets/backgrounds/masters/nora_location_antarctica3.png",
+      "source_sha256": "765ced8b4fdaa35c7e40af7ae2a6010e836644164f62ed42822f824ce4fe7651",
+      "source_bytes": 2511778,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_antarctica3.webp",
+      "output_sha256": "4048f8756af979c82ce363107439580c3c6060d518cd0800cca6bb3492e73b88",
+      "output_bytes": 444684,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_antarctica4",
+      "source": "assets/backgrounds/masters/nora_location_antarctica4.png",
+      "source_sha256": "666471a911f97ee2826f997d94693b5189cc1099915ad5a54a21fbe9ff2a7980",
+      "source_bytes": 2530378,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_antarctica4.webp",
+      "output_sha256": "1bed241990d62e0ba91a529bb34e2d5bbe3ef0f46c5076ba1531a20f5479e1fe",
+      "output_bytes": 489932,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_antarctica5",
+      "source": "assets/backgrounds/masters/nora_location_antarctica5.png",
+      "source_sha256": "87aef7f121000043084e4b43d5a012a67b9d541cfec8239afcd4a201b4be9465",
+      "source_bytes": 2666607,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_antarctica5.webp",
+      "output_sha256": "ae58d20c1cf87f2cefc9ff2b61e00c6ffb2fe51bfbe0fa1d088960754550c25a",
+      "output_bytes": 576548,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_bulgaria1",
+      "source": "assets/backgrounds/masters/nora_location_bulgaria1.png",
+      "source_sha256": "f61c0b2ba0c048b0734fd6f1b12c9dc1f9dd5069d3dfccfa5b9a3a09058b300d",
+      "source_bytes": 2437943,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_bulgaria1.webp",
+      "output_sha256": "2e97eba98a498e6b970e6fff5fba5dc6e97706fef1e3abd43a989753cfb23799",
+      "output_bytes": 464240,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_bulgaria2",
+      "source": "assets/backgrounds/masters/nora_location_bulgaria2.png",
+      "source_sha256": "4b4ebeddd62fa8ac8470895525e4cb9f53ef04424ef8aea5d17c5aca08698e8d",
+      "source_bytes": 2488851,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_bulgaria2.webp",
+      "output_sha256": "f72ed138445daeae1b7a877c4bdbaa45535c9e4bae107cf8014b50120baf803a",
+      "output_bytes": 507664,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_bulgaria3",
+      "source": "assets/backgrounds/masters/nora_location_bulgaria3.png",
+      "source_sha256": "59f60d936e2849facf3353183d77e9478886dff0eca392a097223b0398ec7d1a",
+      "source_bytes": 2375563,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_bulgaria3.webp",
+      "output_sha256": "41dc4f56653b825241ead156158c6919cd6b78a7a80bc1ca8c20e45878e9c862",
+      "output_bytes": 485570,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_china",
+      "source": "assets/backgrounds/masters/nora_location_china.png",
+      "source_sha256": "3cab8fd9674675a9be15f1f53c59767d28c5d3caee873bc5eac7fadfab0dc6a3",
+      "source_bytes": 2490296,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_china.webp",
+      "output_sha256": "d93608612ebd66bc3e55c2ab2eaf4814407e3a16fad38b1f31d2f989a38ccdb7",
+      "output_bytes": 531552,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_discord1",
+      "source": "assets/backgrounds/masters/nora_location_discord1.png",
+      "source_sha256": "b4bbede1da3c1e2c9fe7d4b45b55ee9c532dae23cf68ec048a7cebdabe9838d9",
+      "source_bytes": 1501890,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_discord1.webp",
+      "output_sha256": "da9033d7aaa0a7923718f825226c03dfedc89192706dbe5136f13e670720a821",
+      "output_bytes": 155096,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_discord2",
+      "source": "assets/backgrounds/masters/nora_location_discord2.png",
+      "source_sha256": "33c536bfa237c3a90cda465e15e60f9d09eab89e19d46246e3c1281c9285b262",
+      "source_bytes": 2004544,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_discord2.webp",
+      "output_sha256": "f47afa656186bf1797aed0d5f7e863bdca9a9f9765fe068ac239efe97c0bdf65",
+      "output_bytes": 333338,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_discord3",
+      "source": "assets/backgrounds/masters/nora_location_discord3.png",
+      "source_sha256": "93e84644e86eb763390f862e9430a106a2e57e03332a4f36c30576f3874fb2b6",
+      "source_bytes": 1735058,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_discord3.webp",
+      "output_sha256": "60a9af00bc8bd50891afb63f94bce80fd50909f717f2953190fd4a23c72e5805",
+      "output_bytes": 261358,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_discord4",
+      "source": "assets/backgrounds/masters/nora_location_discord4.png",
+      "source_sha256": "706d2c4aa8066fb04d74a2d90d10727e4d5a6ecbfe66bf26ebd6edcd0b5605a0",
+      "source_bytes": 1575905,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_discord4.webp",
+      "output_sha256": "f5f19f92e811038ae7d0135c15382820d516e6e8c6a2384b2e5bcb43cd168b59",
+      "output_bytes": 198026,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_earth",
+      "source": "assets/backgrounds/masters/nora_location_earth.png",
+      "source_sha256": "bb1027bbc6f983137f8432b666f34f980abea57d64459ce7a68b601c09ad0541",
+      "source_bytes": 1155770,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_earth.webp",
+      "output_sha256": "53662f14127cbad6fd79877676124c9e334911b5dd8285b710230e01d40f896b",
+      "output_bytes": 569268,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "parameters": {
+        "lossless": true,
+        "quality": 100,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_estonia",
+      "source": "assets/backgrounds/masters/nora_location_estonia.png",
+      "source_sha256": "0cf6994307d8392c095c4929cc284a0a6d148054a0387053f0d596241f1b870e",
+      "source_bytes": 2314687,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_estonia.webp",
+      "output_sha256": "bf1a3ab629e40c5ab688563e334694479f1e21c3dda1a4fb38f4d97c0db4905b",
+      "output_bytes": 456060,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_finland1",
+      "source": "assets/backgrounds/masters/nora_location_finland1.png",
+      "source_sha256": "fc27b3cee00f4688274971a468b77ed94766810c367e9f0d6ce7c9033f78a745",
+      "source_bytes": 1854100,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_finland1.webp",
+      "output_sha256": "51cabc08743deca58e115c91a74dcb2dcabcb4759273a76629d90eac38919bb9",
+      "output_bytes": 236924,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_finland2",
+      "source": "assets/backgrounds/masters/nora_location_finland2.png",
+      "source_sha256": "430836f8f9ae376a2927056ca280cf97ac8e641774ad7f35d517d1679e8cea32",
+      "source_bytes": 2478674,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_finland2.webp",
+      "output_sha256": "0e5b21fe0eeb56c17edb29005e313c23ab853f916c8af6887792d3f7438c5b08",
+      "output_bytes": 533292,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_finland3",
+      "source": "assets/backgrounds/masters/nora_location_finland3.png",
+      "source_sha256": "5a249514f4e4a4e0735ae610caef598e216e404901289d5fa4fe326fd968abba",
+      "source_bytes": 2603127,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_finland3.webp",
+      "output_sha256": "1299cc151cfbdf8a9ff62ca90bd91b6d5ebacdf0e1a9995d23c34838f9d2193f",
+      "output_bytes": 530602,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_france1",
+      "source": "assets/backgrounds/masters/nora_location_france1.png",
+      "source_sha256": "5eeaa1278b6b03159c42d9136d893d716b404a4a5cf89d05009315878165bd00",
+      "source_bytes": 2281806,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_france1.webp",
+      "output_sha256": "bda7916b605d83b7bbefd0af8e63c9fbbb9c47a4309494db05f91cae36587d9f",
+      "output_bytes": 396438,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_france2",
+      "source": "assets/backgrounds/masters/nora_location_france2.png",
+      "source_sha256": "eddab67eca1277dd49fd734f5135e23d965244ffa6ccaee9392e2a457d5308e4",
+      "source_bytes": 2579688,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_france2.webp",
+      "output_sha256": "191878b856267896f4a7bf1f5afb2250b21617978db7e8537496488a830b9539",
+      "output_bytes": 555944,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_france3",
+      "source": "assets/backgrounds/masters/nora_location_france3.png",
+      "source_sha256": "53dfdff22a7906e0dde8703f3b905ae726f3fa21cee91df25b6bb08ad44ba539",
+      "source_bytes": 2246442,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_france3.webp",
+      "output_sha256": "0ce472a49cbbeee14ff8a50bead0273000ff858aad2d053bea1aa9ef8c23ed30",
+      "output_bytes": 396084,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_germany1",
+      "source": "assets/backgrounds/masters/nora_location_germany1.png",
+      "source_sha256": "a319318e1f4507e4e5fe7b94eeedd5d33da934350e32ce7b89c702b8ef520369",
+      "source_bytes": 1926496,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_germany1.webp",
+      "output_sha256": "5a88e8069145a0ee5f3b08aaaf727743ca84aaf188a1c76002d281a9cb7472f2",
+      "output_bytes": 236620,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_germany2",
+      "source": "assets/backgrounds/masters/nora_location_germany2.png",
+      "source_sha256": "dc033d742fa30b235ea32ca96c7b6737a092bb179c36c6e2815fdac128c1d0e6",
+      "source_bytes": 2208933,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_germany2.webp",
+      "output_sha256": "4d05dce98c8b2013a44271f66bad239bd0f95a310144fa4af3ce19eacc7dd01a",
+      "output_bytes": 382578,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_germany3",
+      "source": "assets/backgrounds/masters/nora_location_germany3.png",
+      "source_sha256": "32682d76c6f1580b472128204f5178ab654e4341e75a6b5f6bbc1deb558758df",
+      "source_bytes": 2394369,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_germany3.webp",
+      "output_sha256": "a0352468797187f69d5b22156cd695672248094980596415e338aefbec42775b",
+      "output_bytes": 437572,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_ireland",
+      "source": "assets/backgrounds/masters/nora_location_ireland.png",
+      "source_sha256": "b7753fd47d1a0ac5d15acf305952ec48483d21590a3b9e9f01de9037d751029d",
+      "source_bytes": 2348220,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_ireland.webp",
+      "output_sha256": "45a00ecc452ed08d4e7c4217cb43b5cfcd86d3a4e569cadbf6b1d672eb66d8af",
+      "output_bytes": 448666,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_ireland1",
+      "source": "assets/backgrounds/masters/nora_location_ireland1.png",
+      "source_sha256": "f9edec889fe4c69b05f169975dba91dd6e0dcde7cde0245595f0c000fd270b05",
+      "source_bytes": 2117685,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_ireland1.webp",
+      "output_sha256": "f18ca103b76fc76d10276e5c86d246d24206a1a6603023fc54676b6a9b2517a7",
+      "output_bytes": 320400,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_ireland3",
+      "source": "assets/backgrounds/masters/nora_location_ireland3.png",
+      "source_sha256": "288887531e7bc07662a538bb350ea9a614a2d1c738b5ad45ae767a52c2407f25",
+      "source_bytes": 2666528,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_ireland3.webp",
+      "output_sha256": "527a6a0380f7e7ef1cc2c20e1ec6b3ceca6a86c9072ba9a158261d5a028ce22e",
+      "output_bytes": 565186,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_italy",
+      "source": "assets/backgrounds/masters/nora_location_italy.png",
+      "source_sha256": "484b82333bde21fb6cd50b5ddef89d97290fbd52f4030f9fe901c249c2bcb85a",
+      "source_bytes": 2563824,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_italy.webp",
+      "output_sha256": "5370bb8ceaa4bcadece227692725f451e1b1c29a909a6ce21057ae506a7509c2",
+      "output_bytes": 539078,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_lithuania1",
+      "source": "assets/backgrounds/masters/nora_location_lithuania1.png",
+      "source_sha256": "dc26e384492b977fc2e399aab57de63311376b9b526f568c0ba88e42c80f399d",
+      "source_bytes": 2219840,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_lithuania1.webp",
+      "output_sha256": "3cf1e8727ff97a8f7fd630c8d77aad9d80be434227698cb4850230b482cc14e3",
+      "output_bytes": 381970,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_lithuania2",
+      "source": "assets/backgrounds/masters/nora_location_lithuania2.png",
+      "source_sha256": "48a43df1515fdabd227513e951faecc831983bc3cb61e0134979666e3c6c3c3b",
+      "source_bytes": 2442576,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_lithuania2.webp",
+      "output_sha256": "dd0e1a04afb7d1675cf73f5016b757848f7657d6453b12ea24b8e6e12e1d2992",
+      "output_bytes": 482046,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_lithuania3",
+      "source": "assets/backgrounds/masters/nora_location_lithuania3.png",
+      "source_sha256": "a365d68ed01eb688d61dab3edcb45cd80b05c1a4dc582d3adf1fd4d6aa38497b",
+      "source_bytes": 2353792,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_lithuania3.webp",
+      "output_sha256": "316e48a4f282f8e6db7e7e33dde7c909233bd4ca04d031c31c89d70738d8f3b1",
+      "output_bytes": 462412,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_moon",
+      "source": "assets/backgrounds/masters/nora_location_moon.png",
+      "source_sha256": "0360e82d4e938997917727715a04580f0f3e4ef7aba0947380d37c74aca13aa5",
+      "source_bytes": 2129764,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_moon.webp",
+      "output_sha256": "ef1085836307047cc556eab20eb59d9dd4bebab8d15ef3e1a861711a24b81072",
+      "output_bytes": 1192922,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "parameters": {
+        "lossless": true,
+        "quality": 100,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_netherlands1",
+      "source": "assets/backgrounds/masters/nora_location_netherlands1.png",
+      "source_sha256": "e04f8c3b1dd5c167a1c583878566711b3245d11a0d94af0da1695132186ddd67",
+      "source_bytes": 2235084,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_netherlands1.webp",
+      "output_sha256": "e8bfb0100ff94add1db85ceb1377f74cc1e29cf54c4fdeff9364ec6107376206",
+      "output_bytes": 341054,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_netherlands2",
+      "source": "assets/backgrounds/masters/nora_location_netherlands2.png",
+      "source_sha256": "e82edd17904c1c5bffeb082cfded8c2ea1326054e3061486ad5f96faa52b1e1b",
+      "source_bytes": 2312631,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_netherlands2.webp",
+      "output_sha256": "ea1554a5f93faf736a0fd891d72761c210d68d0768d44bd10d181d7e00c0086a",
+      "output_bytes": 430586,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_netherlands3",
+      "source": "assets/backgrounds/masters/nora_location_netherlands3.png",
+      "source_sha256": "fcaca17140c2dd4acaaa7d020824e892e38a91984c09cc5abdde81150c357d5b",
+      "source_bytes": 2436643,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_netherlands3.webp",
+      "output_sha256": "0e36154af714c9a9ef5b2316cf32fb92b62d015ddee23b888c570e5d030a101c",
+      "output_bytes": 469748,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_poland1",
+      "source": "assets/backgrounds/masters/nora_location_poland1.png",
+      "source_sha256": "b02bc0af852b16555678f3f983b857bed740e7e2a818309e002bc445bd05ed9f",
+      "source_bytes": 2273598,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_poland1.webp",
+      "output_sha256": "484d5f13aa2bc9a840d0336b9503d57b2e035fe244a1a5d6a1bd7f523315f287",
+      "output_bytes": 410334,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_poland2",
+      "source": "assets/backgrounds/masters/nora_location_poland2.png",
+      "source_sha256": "21e980f2fe7f7eab5a4ba33445e1df024a08c2c6ac8487c1b515378e02b377e7",
+      "source_bytes": 2251669,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_poland2.webp",
+      "output_sha256": "4c75e9c2695179c96bef70ddc6ff570007f27f3b63f9ac5f3c46cf2bdf73cc50",
+      "output_bytes": 378508,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_poland3",
+      "source": "assets/backgrounds/masters/nora_location_poland3.png",
+      "source_sha256": "9e1a8e64b95e6ada691ddc87041f51480bd4292f6c9ee61da464016a0fc4f905",
+      "source_bytes": 2884802,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_poland3.webp",
+      "output_sha256": "013f78a29e609f35b97293345e1092042f93a4c79746736f0dea4a9dedb1ab8d",
+      "output_bytes": 633296,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_portugal",
+      "source": "assets/backgrounds/masters/nora_location_portugal.png",
+      "source_sha256": "0d187f62cb0e3f36d9f5744cb4e3cbad9b5bb8a2b5194ed64ba4c5258196606b",
+      "source_bytes": 2591734,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_portugal.webp",
+      "output_sha256": "d59b54e406c6c79bbce65afa5b3c72e54eba737d3b3ac4e5e7ded360aa381136",
+      "output_bytes": 538512,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_russia1",
+      "source": "assets/backgrounds/masters/nora_location_russia1.png",
+      "source_sha256": "72e9b8ea70908df3ed6120fa8f1800cb9d27f6ba9c9dc0ef717bd7a6f9c09eb9",
+      "source_bytes": 1915719,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_russia1.webp",
+      "output_sha256": "c5cf16b86b68819dbe646ffe3304b14c4b1663632a54c2504a920ca125b31df0",
+      "output_bytes": 249246,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_russia2",
+      "source": "assets/backgrounds/masters/nora_location_russia2.png",
+      "source_sha256": "dca09ca74a53075b88f82a26c8baa6368973b83eb3bac4619023fb624e0c4003",
+      "source_bytes": 2439159,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_russia2.webp",
+      "output_sha256": "6764bc96ccbbcaad0381a71f2d959a25977d69abab43e03611ade3fcb6d621e7",
+      "output_bytes": 499272,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_russia3",
+      "source": "assets/backgrounds/masters/nora_location_russia3.png",
+      "source_sha256": "263c42615ff3f6b8f7ec7f8e816e8be7965f737f9b25aaeee3136e0baa7028a3",
+      "source_bytes": 2672355,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_russia3.webp",
+      "output_sha256": "489e4ac4bf6029cede0dd45866741d43cdc5b4a618c5fb574ddea5cbb93c39c6",
+      "output_bytes": 569620,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_spain",
+      "source": "assets/backgrounds/masters/nora_location_spain.png",
+      "source_sha256": "7584dcef99104945b939860e547d68c9e200c039999b296cb92c5f97233445f7",
+      "source_bytes": 2399898,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_spain.webp",
+      "output_sha256": "f5c0a59d9d3008a4dc484a0f727886ce69407b568bcf1a03e31c01aa90fc725f",
+      "output_bytes": 474074,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_uk1",
+      "source": "assets/backgrounds/masters/nora_location_uk1.png",
+      "source_sha256": "cf627caa2e4bff3d2f4373aea609173d2742b461b96b2beee45acf447b7e887d",
+      "source_bytes": 2260449,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_uk1.webp",
+      "output_sha256": "0a7b525de7af683909e741c11948e0b7d8e59bf6507bea679f805a99fd8f2dbb",
+      "output_bytes": 379696,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_uk2",
+      "source": "assets/backgrounds/masters/nora_location_uk2.png",
+      "source_sha256": "1d0adaa098ea874f55706d36f228f581f2dd4039675380d4e3c6f15e0326ed59",
+      "source_bytes": 2249070,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_uk2.webp",
+      "output_sha256": "4c2d5eea83b26af8a9ea1b4f7b145874ad1dc38190fa0cf1ab084886d31cf1e3",
+      "output_bytes": 417748,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_uk3",
+      "source": "assets/backgrounds/masters/nora_location_uk3.png",
+      "source_sha256": "e763996b31b66d8b7d44d5aefa0d03bd17311a16f199d7eec72a4bd061614dfc",
+      "source_bytes": 2320384,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_uk3.webp",
+      "output_sha256": "4f58a038a88954678621ce523078f4ed9b98f57d2d7a127066462d15cf82ccbc",
+      "output_bytes": 439556,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_universal",
+      "source": "assets/backgrounds/masters/nora_location_universal.png",
+      "source_sha256": "f78f5b284bd74a8aedc08f0f62c56b72294cb53ec7ff676696b929d4991a72ee",
+      "source_bytes": 1948661,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_universal.webp",
+      "output_sha256": "efb83f3ae6ca0004145caa387022ac6c76994ff3f0a8da7c9a0919dd3074113a",
+      "output_bytes": 285912,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_universe",
+      "source": "assets/backgrounds/masters/nora_location_universe.png",
+      "source_sha256": "a9ef9402ddb84222d32589d227d136991eed0e98cb3b70fcb6de18c7699ebd09",
+      "source_bytes": 1884187,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_universe.webp",
+      "output_sha256": "9b581f06a0ca0a83e973d89f1f4cbd8c15fd7336cf439adbe436fe62d020bc37",
+      "output_bytes": 214528,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_usa1",
+      "source": "assets/backgrounds/masters/nora_location_usa1.png",
+      "source_sha256": "bdc30d2a8c098e7e3cd69512c95bc48d5c58085de4d54a54bd10af61655c7274",
+      "source_bytes": 2186262,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_usa1.webp",
+      "output_sha256": "a30a5f5b8e7c7e4950023d4a768400de2317bbc99fe9f41b107194bd82c1ff65",
+      "output_bytes": 337604,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_usa2",
+      "source": "assets/backgrounds/masters/nora_location_usa2.png",
+      "source_sha256": "d484bcee799e78748b2c2581a8cd072c7a258f0b53ebfe640ca96b1da623f112",
+      "source_bytes": 2249645,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_usa2.webp",
+      "output_sha256": "708a10711d1539efe9f1af084a368b8cd12ef55b5066c5bab580ba53f319d3e5",
+      "output_bytes": 426162,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_usa3",
+      "source": "assets/backgrounds/masters/nora_location_usa3.png",
+      "source_sha256": "831e6fa537162ca11641b5add17052d72b4406a06580276c54f82e2adc8d1246",
+      "source_bytes": 2348322,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_usa3.webp",
+      "output_sha256": "b6195c6ecfa4926b85268be52a98840f6b0ede798ccd726fa9219365dd83fee8",
+      "output_bytes": 471894,
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    },
+    {
+      "resource": "nora_location_welocmescreengirl",
+      "source": "assets/backgrounds/masters/nora_location_welocmescreengirl.png",
+      "source_sha256": "b5de2132187d232d104cb73e20cda9f24c3aba8e83867efe0f2406eed73edce2",
+      "source_bytes": 2367423,
+      "output": "app/src/main/res/drawable-nodpi/nora_location_welocmescreengirl.webp",
+      "output_sha256": "b65e3bc30f0037fddb2e13609b82391506b20f010d6869d503e1087edfd4455b",
+      "output_bytes": 477952,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "parameters": {
+        "lossless": false,
+        "quality": 95,
+        "method": 6,
+        "exact": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Official Pillow wheel bundles libwebp; pipeline verifies both encoder versions.
+Pillow==11.3.0
